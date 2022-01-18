@@ -1,3 +1,5 @@
+# 禁止使用本工具非法攻击
+
 # judgeIP
 判断字符串中的ip类型
 
@@ -21,3 +23,12 @@ xx.xxx.com,10.100.59.140,securitytrails,private  > 内网ip
 m.xx.xxx.com,10.69.34.166,securitytrails,private > 内网ip
 
 ```
+
+> usage
+
+```bash
+cat .\subfinder.txt |.\main.exe |grep -E "private" |cut -d ',' -f 1 | anew >> private.txt   #快速过滤出内网域名（去重）
+
+cat .\subfinder.txt |.\main.exe |grep -E "public" |cut -d ',' -f 2 |anew >> public-ip.txt  # 快速过滤出公网ip（去重）
+```
+### 其他平台自行编译
